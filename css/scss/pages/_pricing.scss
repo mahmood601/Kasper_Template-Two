@@ -1,0 +1,93 @@
+@use "../variables" as *;
+@use "../colors" as *;
+/* Start Pricing */
+.pricing {
+  margin-top: $padding-sec;
+  margin-bottom: $padding-sec;
+  .container {
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: center;
+      .head {
+        background-color: #fcfcfc;
+        border-top: 1px solid $main-color;
+        border-bottom: 1px solid $main-color;
+        padding: 50px;
+
+        h3 {
+          font-weight: normal;
+          margin-bottom: 40px;
+          text-transform: uppercase;
+        }
+        .price {
+          position: relative;
+          font-size: 40px;
+          font-weight: bold;
+          &::before {
+            content: "$";
+            position: absolute;
+            font-weight: normal;
+            left: -20px;
+            top: -10px;
+            font-size: 20px;
+          }
+          &::after {
+            content: "/Mo";
+            position: absolute;
+            right: -50px;
+            bottom: -5px;
+            font-size: 20px;
+            font-weight: normal;
+          }
+        }
+      }
+      ul {
+        li {
+          padding: 30px;
+          position: relative;
+        }
+        li:after {
+          content: "";
+          position: absolute;
+          background-color: $main-color;
+          width: 50%;
+          height: 1px;
+          left: 50%;
+          bottom: -50px;
+          transform: translate(-50%, -50px);
+        }
+        li:last-child::after {
+          width: 100% !important;
+        }
+      }
+      .footer {
+        text-transform: uppercase;
+        margin: 40px auto;
+        border: 1px solid $main-color;
+        text-align: center;
+        padding: 40px 20px;
+        width: fit-content;
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+    }
+    .contact-p {
+      margin: 40px auto 10px;
+      text-align: center;
+    }
+    .contact-a {
+      display: block;
+      background-color: $main-color;
+      margin: 0 auto;
+      padding: 10px;
+      width: fit-content;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+/* End Pricing */

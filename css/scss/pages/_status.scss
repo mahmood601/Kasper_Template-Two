@@ -1,0 +1,64 @@
+@use '../mixins' as *;
+@use '../colors' as *;
+@use '../variables' as *;
+/* Start Status */
+.status {
+  position: relative;
+  background-image: url("../../../assets/stats.png");
+  padding-top: $padding-sec;
+  padding-bottom: $padding-sec;
+  text-align: center;
+  &::before {
+    @include overlay (70%);
+  }
+  .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $transparent-color;
+    .box {
+      color: #fff;
+      padding: 50px;
+      i {
+        padding: 20px;
+        background-color: #000;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+/* Start Status Media */
+@media (max-width: 767px) {
+  .status {
+    .container {
+      .box {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .status {
+    .container {
+      .box {
+        flex-basis: 50%;
+      }
+    }
+  }
+}
+@media (min-width: 1199px) {
+  .status {
+    .container {
+      .box {
+        flex-basis: 25%;
+      }
+    }
+  }
+}
+
+/* End Status Media */
+/* End Status */

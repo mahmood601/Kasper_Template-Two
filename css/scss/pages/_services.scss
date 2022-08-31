@@ -1,0 +1,58 @@
+@use "../variables" as *;
+@use "../colors" as *;
+/* Start Services */
+.services {
+  padding-top: $padding-sec;
+  padding-bottom: $padding-sec;
+
+  .box {
+
+    h3 {
+      color: $main-color;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 2;
+      color: $text-color;
+      font-weight: normal;
+    }
+  }
+}
+
+/* Start Services Media */
+@media (max-width: 767px) {
+  .services .boxes {
+    text-align: center;
+
+    .box {
+      margin-bottom: 40px;
+
+      i {
+        margin-bottom: 40px;
+      }
+      h3 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .services .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 40px 60px;
+
+    .box {
+      display: flex;
+
+      i {
+        margin-right: 40px;
+      }
+    }
+  }
+}
+/* End Services Media */
+
+/* End Services */

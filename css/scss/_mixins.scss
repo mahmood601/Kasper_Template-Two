@@ -1,0 +1,63 @@
+@use 'colors' as *;
+// Reset list style
+@mixin list-reset {
+  li {
+    list-style: none;
+  }
+}
+
+// Determine the pesudo (before || after)
+@mixin pesudo(
+  $text,
+  $first-direction,
+  $value1,
+  $second-direction,
+  $value2,
+  $wd,
+  $hg
+) {
+  content: $text;
+  position: absolute;
+  #{$first-direction}: $value1;
+  #{$second-direction}: $value2;
+  height: $hg;
+  width: $wd;
+}
+
+// flex styles
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin radius($width, $height, $radius) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+}
+
+@mixin overlay($alpha) {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(#000, $alpha);
+}
+
+@mixin bullets($width ,$height) {
+  display: flex;
+  justify-content: center;
+
+  li {
+    @include radius($width, $height ,50%);
+    border: 1px solid #aaa;
+    margin-right: 10px;
+  }
+  li.active {
+    background-color: $main-color;
+    border-color: $main-color;
+  }
+}

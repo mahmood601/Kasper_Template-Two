@@ -1,0 +1,66 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../colors" as *;
+/* Start Design */
+.design {
+  display: flex;
+  height: 600px;
+  padding-top: $padding-sec;
+  padding-bottom: $padding-sec;
+  background-image: url('../../../assets/design-features.jpg');
+  background-position: cover;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    @include flex(center, stretch);
+    @include overlay(60%);
+     }
+
+  .image {
+    text-align: center;
+    flex: 1;
+    position: relative;
+    img {
+      position: relative;
+      bottom: -150px;
+    }
+  }
+
+  .text {
+    color: #fff;
+    flex: 1;
+    position: relative;
+    padding: 50px;
+    background-color: $transparent-color;
+
+    h2 {
+      font-weight: normal;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    ul li {
+      padding: 15px 0;
+
+      &:before {
+        font-family: "Font Awesome 6 Free";
+        content: "\f108";
+        font-weight: bold;
+        margin-right: 20px;
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+}
+/* Start Design Media */
+@media (max-width: 767px) {
+  .design .image {
+    display: none;
+  }
+}
+/* End Design Media */
+
+/* End Design */

@@ -1,0 +1,95 @@
+@use "../colors" as *;
+@use "../mixins" as *;
+/* Start Landing */
+.landing {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  background: {
+    color: #1f2021;
+    image: url("../../../assets/landing.png");
+    size: cover;
+    repeat: no-repeat;
+  }
+
+  .overlay {
+    @include flex(center, stretch);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(#000, 60%);
+
+    .text {
+      width: 50%;
+      padding: 50px;
+      @include flex(flex-end, center);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      color: white;
+      background-color: $transparent-color;
+      transform: translateY(-50%);
+
+      .content {
+        max-width: 500px;
+
+        h2 {
+          line-height: 1.5;
+          margin-bottom: 20px;
+          font: {
+            size: 32px;
+            weight: bold;
+          }
+        }
+
+        p {
+          line-height: 2;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .change-pos {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+
+  .fa-angle-left {
+    left: 30px;
+  }
+
+  .fa-angle-right {
+    right: 30px;
+  }
+
+  ul {
+    @include bullets(20px ,20px);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+/* Start Landing media */
+@media (max-width: 767px) {
+  .landing {
+    .overlay {
+      .text {
+        width: 100%;
+
+        .content {
+          max-width: 100%;
+        }
+      }
+    }
+    .change-pos {
+      display: none;
+    }
+  }
+}
+/* End Landing Media */
+
+/* End Landing */

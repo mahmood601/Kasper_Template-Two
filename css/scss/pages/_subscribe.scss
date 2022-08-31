@@ -1,0 +1,86 @@
+@use "../mixins" as *;
+@use "../colors" as *;
+@use "../variables" as *;
+
+/* Start Subscribe */
+.subscribe {
+  padding-top: $padding-sec;
+  padding-bottom: $padding-sec;
+  background: {
+    image: url("../../../assets/subscribe.jpg");
+    size: cover;
+  }
+  position: relative;
+  &::before {
+    @include overlay(50%);
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    form {
+      display: flex;
+      width: 500px;
+      max-width: 100%;
+      position: relative;
+      i {
+        position: absolute;
+        color: #fff;
+        left: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      input[type="email"] {
+        border: 1px solid #fff;
+        background: none;
+        caret-color: $main-color;
+        position: relative;
+        padding: 20px 20px 20px 60px;
+        width: calc(100% - 130px);
+        color: $main-color;
+        border-right: none;
+        &:focus {
+          outline: none;
+        }
+      }
+      input[type="submit"] {
+        width: 130px;
+        background-color: $main-color;
+        color: #fff;
+        padding: 10px 20px;
+        border: 1px solid #fff;
+        text-transform: uppercase;
+        border-left: none;
+        &:focus {
+          outline: none;
+        }
+      }
+      ::placeholder {
+        color: #fff;
+      }
+    }
+    p {
+      text-align: center;
+      position: relative;
+      color: #fff;
+      margin-left: 50px;
+      line-height: 2;
+    }
+  }
+}
+/* Start Subscribe Media */
+@media (max-width: 992px) {
+  .subscribe {
+    .container {
+      display: flex;
+      flex-direction: column;
+      p {
+        margin: 15px 0 0;
+        
+      }
+    }
+  }
+}
+/* End Subscribe Media */
+/* End Subscribe */

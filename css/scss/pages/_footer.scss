@@ -1,0 +1,48 @@
+@use "../mixins" as *;
+@use "../colors" as *;
+@use "../variables" as *;
+/* Start Footer */
+footer {
+  position: relative;
+  padding-top: #{$padding-sec / 2};
+  padding-bottom: #{$padding-sec / 2};
+  background: {
+    image: url("../../../assets/subscribe.jpg");
+    size: cover;
+    left: 0;
+    top: 0;
+  }
+  &:before {
+    @include overlay(50%);
+  }
+  .container {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    img {
+      margin-bottom: 20px;
+    }
+    p:not(.copyright) {
+      text-transform: uppercase;
+      padding: 20px;
+      border-bottom: 1px solid #fff;
+      font-size: 22px;
+      width: fit-content;
+      margin: 20px auto;
+     
+    }
+      .social-icons {
+        i {
+          padding: 10px;
+        }
+      } 
+  .copyright {
+    margin-top: 60px;
+    span {
+      font-size: bold;
+      color: $main-color;
+    }
+  }
+  }
+}
+/* End Footer */

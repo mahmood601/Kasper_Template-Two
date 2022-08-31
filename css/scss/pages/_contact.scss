@@ -1,0 +1,87 @@
+@use "../variables" as *;
+@use "../colors" as *;
+/* Start Contact */
+.contact {
+  padding-top: $padding-sec;
+  padding-bottom: $padding-sec;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    form {
+      flex-basis: 70%;
+      .main-input {
+        width: 100%;
+        display: block;
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 30px;
+        &:focus {
+          outline: none;
+        }
+      }
+      textarea.main-input {
+        height: 200px;
+      }
+      input[type="submit"] {
+        display: flex;
+        background-color: $main-color;
+        padding: 20px;
+        color: #fff;
+        text-transform: uppercase;
+        border: none;
+        margin-left: auto;
+        cursor: pointer;
+      }
+    }
+    .info {
+      flex-basis: 25%;
+      h4 {
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        font-weight: bold;
+        font-size: 15px;
+        &:nth-of-type(2) {
+          margin-top: 90px;
+        }
+      }
+      .phone {
+        display: block;
+        color: $text-color;
+        margin-bottom: 10px;
+      }
+      address {
+        line-height: 2;
+        color: $text-color;
+      }
+
+    }
+  }
+}
+/* start Contact  Media */
+@media (max-width: 767px) {
+  .contact {
+    .content {
+      flex-flow: column-reverse;
+      .info {
+        text-align: center;
+        h4 {
+          &:nth-of-type(2) {
+            margin-top: 30px;
+          }
+        }
+        .phone {
+          display: inline-flex;
+          &:first-of-type {
+            margin-right: 10px;
+          }
+        }
+        address {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  
+}
+/* End Contact Media */
+/* End Contact */

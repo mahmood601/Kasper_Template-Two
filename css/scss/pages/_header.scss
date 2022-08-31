@@ -1,0 +1,101 @@
+@use "../mixins" as *;
+@use '../colors' as *;
+/* Start Header */
+header {
+  width: 100%;
+  position:absolute;
+  left: 0;
+  z-index: 3;
+  .container {
+    min-height: 97px;
+    @include flex(space-between, center);
+    position: relative;
+    &::after {
+      @include pesudo("", left, 15px, bottom, 0, calc(100% - 30px), 1px);
+      background-color: #a2a2a2;
+
+    }
+
+    img {
+      height: 40px;
+    }
+
+    nav {
+      @include flex(flex-end, center);
+      flex: 1;
+      .toggle-menu {
+        color: #fff;
+        font-size: 22px;
+      }
+      ul {
+        a {
+          display: block;
+          padding: 40px 13px;
+          font-size: 14px;
+          color: white;
+          position: relative;
+          text-decoration: none;
+          transition: 0.3s;
+          z-index: 2;
+          &.active,
+          &:hover {
+            color: $main-color;
+            border-bottom: 1px solid $main-color;
+          }
+        }
+      }
+      .form {
+        width: 40px;
+        height: 30px;
+        margin-left: 15px;
+        position: relative;
+        border-left: 1px solid #fff;
+        i {
+          color: #fff;
+          font-size: 20px;
+          position: absolute;
+          bottom: 50%;
+          transform: translateY(50%);
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Start Header Media*/
+@media (min-width: 768px) {
+  header nav {
+    ul {
+        display: flex;
+    }
+    .toggle-menu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    nav {
+      ul {
+        display: none;
+        a {
+          padding: 15px !important;
+        }
+      }
+      .toggle-menu:hover + ul {
+          display: flex;
+          flex-direction: column;
+          top: 100%;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          background-color: rgba(#000, 50%);
+        
+      }
+    }
+  }
+}
+/* End Header Media */
+/* End Header */

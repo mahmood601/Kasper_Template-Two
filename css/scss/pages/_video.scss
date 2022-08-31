@@ -1,0 +1,39 @@
+@use '../mixins' as *;
+@use '../colors' as *;
+/* Start Video */
+.video {
+  position: relative;
+  &::before {
+    @include overlay (40%);
+  }
+  video {
+  width: 100%; 
+  }
+  .text {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    background-color: $transparent-color;
+    color: #fff;
+    padding: 40px; 
+    h2 {
+      margin-bottom: 30px;
+      font-weight: normal;
+      text-transform: uppercase;
+
+    }
+    p {
+      margin-bottom: 30px;
+    }
+    button {
+      text-transform: uppercase;
+      border: none;
+      padding: 10px 15px;
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+/* End Video */
