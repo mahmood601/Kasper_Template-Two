@@ -43,7 +43,7 @@ This is the second template after learning Html & CSS
 
 - [Elzero Web School](https://elzero.org) - This website help people to learn programming and web developement by Mr Osama Mohammad
 - [CSS Tricks](https://css-tricks.com) - This is an amazing website for learning CSS in professional way
-- [SCSS Language](https://sass-lang.com) - The primary website for scss & sass langu
+- [SCSS Language](https://sass-lang.com) - The primary website for scss & sass language
 - [Google Fonts](https://fonts.google.com)
 
 ## Author
